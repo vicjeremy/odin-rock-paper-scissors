@@ -46,7 +46,18 @@ function playGame() {
         console.log(playRound(humanSelection, computerSelection));
         
     }
-    return `Computer Score: ${computerScore}\nHuman Score: ${humanScore}`
+    console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`)
+    const winner = (computerScore, humanScore) => {
+        if (computerScore > humanScore){
+            return 'Computer Win!'
+        }else if (computerScore < humanScore){
+            return "Human Win!";
+        }else{
+            return 'Draw Match'
+        }
+    }
+    return winner(computerScore, humanScore)
+
 }
 
 console.log(playGame())
